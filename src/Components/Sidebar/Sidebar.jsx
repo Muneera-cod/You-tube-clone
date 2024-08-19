@@ -18,9 +18,11 @@ import gamesicon from '../../assets/game_icon.png'
 import entertainmenticon from '../../assets/automobiles.png'
 import nastya from '../../assets/nastya.jpg'
 import tseries from '../../assets/tseries.png'
-function Sidebar() {
-  return (
-    <div className="sidebar">
+import Navbar from '../Navbar/Navbar'
+function Sidebar({side}) {
+  return (<>
+    {side && (
+      <div className="sidebar">
         <div className="shortcut-links">
             <div className="sidelinks">
                 <img src={homeicon}/><p>Home</p>
@@ -81,7 +83,7 @@ function Sidebar() {
                 <img src={nastya}/><p>Like Nastya</p>
             </div>
         </div>
-    </div>
+    </div>)}</>
   )
 }
 

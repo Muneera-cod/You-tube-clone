@@ -1,4 +1,4 @@
-import React from 'react'
+import React, { useState } from 'react'
 import './Navbar.css'
 import menuicon from '../../assets/hamburger-menu.svg'
 import logo from '../../assets/youtube-logo (1).svg'
@@ -8,12 +8,18 @@ import moreicon from '../../assets/more.png'
 import notificationicon from '../../assets/notifications.svg'
 import profileicon from '../../assets/profile.png'
 import voicesearchicon from '../../assets/voice-search-icon.svg'
+import Sidebar from '../Sidebar/Sidebar'
 
 const Navbar=()=> {
+  const [sidebar,setSidebar]=useState(false);
+  const handleSidebar=()=>{
+     setSidebar(!sidebar)
+  }
   return (
+    <>
     <nav className='flex-div'>
         <div className='nav-left flex-div'>
-          <img src={menuicon} className='menu-icon'></img>
+          <img src={menuicon} className='menu-icon' onClick={handleSidebar}></img>
           <img src={logo} className='logo'></img>
         </div>
         <div className='nav-middle flex-div'>
@@ -29,7 +35,8 @@ const Navbar=()=> {
             <img src={profileicon} alt="" className='profileicon' />
         </div>
     </nav>
-    
+    <Sidebar side={sidebar}/>
+    </>
   )
 }
 
