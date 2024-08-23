@@ -18,17 +18,18 @@ import gamesicon from '../../assets/game_icon.png'
 import entertainmenticon from '../../assets/automobiles.png'
 import nastya from '../../assets/nastya.jpg'
 import tseries from '../../assets/tseries.png'
-import Navbar from '../Navbar/Navbar'
+import { useNavigate } from 'react-router-dom'
 function Sidebar({side}) {
+    const navigate=useNavigate()
   return (<>
     {side && (
       <div className="sidebar">
         <div className="shortcut-links">
             <div className="sidelinks">
-                <img src={homeicon}/><p>Home</p>
+                <img src={homeicon} onClick={()=>navigate('/home')}/><p>Home</p>
             </div>
             <div className="sidelinks">
-                <img src={subscriptionicon}/><p>Subscriptions</p>
+                <img src={subscriptionicon} onClick={()=>navigate('/subscriptions')}/><p>Subscriptions</p>
             </div>
             <div className="sidelinks">
                 <img src={libraryicon}/><p>Library</p>

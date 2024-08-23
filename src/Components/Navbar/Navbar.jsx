@@ -11,7 +11,7 @@ import voicesearchicon from '../../assets/voice-search-icon.svg'
 import Sidebar from '../Sidebar/Sidebar'
 
 const Navbar=()=> {
-  const [sidebar,setSidebar]=useState(false);
+  const [sidebar,setSidebar]=useState(true);
   const handleSidebar=()=>{
      setSidebar(!sidebar)
   }
