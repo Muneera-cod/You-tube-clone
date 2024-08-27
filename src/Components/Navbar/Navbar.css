@@ -17,6 +17,9 @@
     border-style: none;
 }
 
+.button-voicesearch:hover{
+    background: rgb(195, 194, 194);
+}
 
 nav{
     padding: 10px 2%;
@@ -57,4 +60,7 @@ nav{
 .nav-right .profileicon{
     width:35px;
     height: 35px;
+}
+.nav-right .searchicon{
+   display: none;
 }

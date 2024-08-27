@@ -1,17 +1,16 @@
 import React from 'react'
 import './Home.css'
-import '@mantine/core/styles.css';
-
-import { MantineProvider } from '@mantine/core';
-import Navbar from '../../Components/Navbar/Navbar'
-function Home() {
-  return <MantineProvider>{
+import Navbar from '../../Components/Navbar/Navbar';
+import Feed from '../../Components/Feed/Feed';
+import Profile from '../../Components/Profile/Profile';
+function Home({sidebar}) {
+  return(
     <>
-    <Navbar/>
-    <div className='divv'><h1 className="font-bold">Home</h1></div>
-    
+     <Navbar></Navbar>
+     <Feed sidebar={sidebar}/>
     </>
-    }</MantineProvider>
+    
+  )
   
     
   

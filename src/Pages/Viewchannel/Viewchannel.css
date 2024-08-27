@@ -1,0 +1,15 @@
+.viewchannelp h1 {
+    margin:10px 15px 0 25px;
+}
+.viewchannelp p {
+    margin-left: 28px;
+    color: #5a5a5a;
+}
+
+
+.hrr hr{
+    margin-top: 2px;
+    border:0;
+    height: 1px;
+    background: #ccc;
+}
