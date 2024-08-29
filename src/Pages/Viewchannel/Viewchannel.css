@@ -13,3 +13,12 @@
     height: 1px;
     background: #ccc;
 }
+@media(max-width:1000px){
+    .outer-box{
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        margin-left: -50%;
+       
+    }
+}

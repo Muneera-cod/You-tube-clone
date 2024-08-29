@@ -7,22 +7,28 @@ import { IconBrandGoogleFilled ,IconUsers,IconChevronRight,
 import profileicon from '../../assets/profile.png'
 import { Link, useNavigate } from 'react-router-dom'
 function Profile({profile}) {
-  const navigate=useNavigate()
+  
   return (<>
       <MantineProvider>{profile &&
+      <div className='outer'>
       <div className='profile'>
-        <div className=".shortct-links">
-            <div className="sidelinks">
-                <Avatar src={profileicon} mr={10}></Avatar><p>Username</p>
-                                          
+        <div className="shortct-links">
+          <div >
+            <div className="profiletop">
+                <div className='profilephoto'>
+                  <Avatar src={profileicon}></Avatar>
+                  <div className='profileleftside'>
+                  <p>Username</p>
+                  <p>@user123</p>
+                  <Link to='/viewchannel' style={{textDecoration:'none'}}><p>View your channel</p></Link>     
+                  </div>                
+                </div>                    
             </div>
-            <p className='user'>@user123</p>
-            <Link to='/viewchannel' style={{textDecoration:'none'}}><p className='viewurchannel'>View your channel</p></Link>
-
-            <div className="sidelink">
-                <p ></p>
+           
             </div>
-            <div className="sidelink">
+{/* ---------------------------------------------------------------------------------------------------------------------------------------------- */}
+            
+           <Flex direction={'column'} justify={'center'}><div className="sidelink">
             <IconBrandGoogleFilled stroke={2}/><p>Google</p>
             </div>
             <div className="sidelink">
@@ -32,6 +38,10 @@ function Profile({profile}) {
                <IconLogout stroke={1}></IconLogout><p>LogOut</p>
             </div>
             <hr/>
+            </Flex>
+
+
+            <Flex direction={'column'} justify={'center'}>
             <div className="sidelink">
             <IconWorld stroke={1}/><p>Location: India</p>
             </div>
@@ -45,22 +55,27 @@ function Profile({profile}) {
                <IconMoon stroke={1} /><p>Appearance: Device theme</p>
             </div>
             <hr/>
+            </Flex>
+
+            <Flex direction={'column'} justify={'center'} >
             <div className="sidelink">
             <IconSettings stroke={1} /><p>Settings</p>
             </div>
             <hr/>
+            </Flex>
             
+            <Flex direction={'column'} justify={'center'}>
             <div className="sidelink">
             <IconHelp stroke={1}/><p>Help</p>
             </div>
-            
-            <div className="sidelink">
+             <div className="sidelink">
             <IconMessageExclamation stroke={1}/><p>Send Feedback</p>
             </div>
-        
+            </Flex>
         </div>
         <hr/>
        
+    </div>
     </div>}
     </MantineProvider>
     </>

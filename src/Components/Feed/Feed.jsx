@@ -30,11 +30,12 @@ import thumbnail6 from '../../assets/asmrscriptingthumbnail (1).png'
 import thumbnail9 from '../../assets/thumbnail9 (1).png'
 import mrbeastlogo from '../../assets/mrbeastlogo.jpg'
 import thumbnail11 from '../../assets/thumbnail (1).png'
-function Feed() {
+
+function Feed( {}) {
   return (
     <MantineProvider>{
         <>
-       <div className='container'>
+        <div className='container'>
         <div className='feed'>
             <Link to={`https://www.youtube.com/watch?v=Zb1zVeXLUf8&t=3569s`} className='card' style={{textDecoration:'none'}}>
                    <img src={thumbnail4} alt=''/>

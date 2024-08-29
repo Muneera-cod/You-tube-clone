@@ -22,79 +22,127 @@ import brototypelogo from '../../assets/brototypelogo.webp'
 import tseries from '../../assets/tseries.png'
 import { useNavigate } from 'react-router-dom'
 function Sidebar({sidebar}) {
+    const sidebardata=[
+    {
+       name:'Home',
+       icon:homeicon,
+       link:'/home'
+    },{
+        name:'Subscriptions',
+        icon:subscriptionicon,
+        link:'/subscriptions'
+    },
+    {
+        name:'Library',
+        icon:libraryicon,
+        link:'/library'
+    },
+    {
+        name:'Technology',
+        icon:techicon,
+        link:'/technology'
+    },
+    {
+        name:'Entertainment',
+        icon:entertainmenticon,
+        link:'/entertainment'
+    },
+    {
+        name:'Music',
+        icon:musicicon,
+        link:'/music'
+    },
+    {
+        name:'Sports',
+        icon:sportsicon,
+        link:'/sports'
+    },
+    {
+        name:'News',
+        icon:newsicon,
+        link:'/news'
+    },
+    {
+        name:'Blogs',
+        icon:blogsicon,
+        link:'/blogs'
+    },
+    {
+        name:'Automobiles',
+        icon:automobileicon,
+        link:'/automobiles'
+    },
+    {
+        name:'Games',
+        icon:gamesicon,
+        link:'/games'
+    }
     
+]
+const sidebarsubscriptiondata=[
+    {
+       logo:mrbeastlogo,
+       channelname:'MrBeast'
+    },
+    {
+        logo:fivemincraftlogo,
+        channelname:'5-Minutes Craft'
+     },
+     {
+        logo:tseries,
+        channelname:'T series'
+     },
+     {
+        logo:brototypelogo,
+        channelname:'Brototype'
+     },
+     {
+        logo:javascriptmastery,
+        channelname:'Javascript Mastery'
+     },
+     {
+        logo:nasdaily,
+        channelname:'Nas Daily'
+     },
+     {
+        logo:tom,
+        channelname:'Justin Bieber'
+     },
+     {
+        logo:jackicon,
+        channelname:'PewDiePie'
+     },
+     {
+        logo:nastya,
+        channelname:'Like Nastya'
+     }
+]
     const navigate=useNavigate()
   return (<>
 
       <div className={`sidebar ${sidebar ?"":"small-sidebar"}`}>
+       
         <div className="shortcut-links">
-            <div className="sidelinks" onClick={()=>navigate('/home')} title='Home'>
-                <img src={homeicon} /><p>Home</p>
-            </div>
-            <div className="sidelinks" onClick={()=>navigate('/subscriptions')} title='Subscriptions'>
-                <img src={subscriptionicon}/><p >Subscriptions</p>
-            </div>
-            <div className="sidelinks" onClick={()=>navigate('/library')} title='Library'>
-                <img src={libraryicon}/><p >Library</p>
-            </div>
-            <div className="sidelinks" onClick={()=>navigate('/technology')} title='Technology'>
-                <img src={techicon}/><p >Technology</p>
-            </div>
-            <div className="sidelinks"  onClick={()=>navigate('/entertainment')} title='Entertainment'>
-                <img src={entertainmenticon}/><p>Entertainment</p>
-            </div>
-            <div className="sidelinks" onClick={()=>navigate('/music')} title='Music'>
-                <img src={musicicon}/><p>Music</p>
-            </div>
-            <div className="sidelinks" onClick={()=>navigate('/sports')} title='Sports'>
-                <img src={sportsicon}/><p>Sports</p>
-            </div>
-            <div className="sidelinks" onClick={()=>navigate('/news')} title='News'>
-                <img src={newsicon}/><p>News</p>
-            </div>
-            <div className="sidelinks" onClick={()=>navigate('/blogs')} title='Blogs'>
-                <img src={blogsicon}/><p>Blogs</p>
-            </div>
-            <div className="sidelinks" onClick={()=>navigate('/automobiles')} title='Automobiles'>
-                <img src={automobileicon}/><p>AutoMobile</p>
-            </div>
-            
-            <div className="sidelinks" onClick={()=>navigate('/games')} title='Games'>
-                <img src={gamesicon}/><p>Games</p>
-            </div>
-           
+        
+            {sidebardata.map((item)=>{
+                return(
+                <div className="sidelinks" onClick={()=>navigate(item.link)} title='Home'>
+                <img src={item.icon} /><p>{item.name}</p>
+            </div>)
+             
+        })}  
+         <hr/>
         </div>
-        <hr/>
+        
         <div className="subscrptions">
             <h3>Subscriptions</h3>
-            <div className="sidelinks">
-                <img src={mrbeastlogo}/><p>MrBeast</p>
-            </div>
-            <div className="sidelinks">
-                <img src={fivemincraftlogo}/><p>5-Minutes Craft</p>
-            </div>
-            <div className="sidelinks">
-                <img src={tseries}/><p>T series</p>
-            </div>
-            <div className="sidelinks">
-                <img src={brototypelogo}/><p>Brototype</p>
-            </div>
-            <div className="sidelinks">
-                <img src={javascriptmastery}/><p>Javascript Mastery</p>
-            </div>
-            <div className="sidelinks">
-                <img src={nasdaily}/><p>Nas Daily</p>
-            </div>
-            <div className="sidelinks">
-                <img src={tom}/><p>Justin Bieber</p>
-            </div>
-            <div className="sidelinks">
-                <img src={jackicon}/><p>PewDiePie</p>
-            </div>
-            <div className="sidelinks">
-                <img src={nastya}/><p>Like Nastya</p>
-            </div>
-            
+        {sidebarsubscriptiondata.map((item)=>{
+            return(
+             <div className="sidelinks">
+                <img src={item.logo}/><p>{item.channelname}</p>
+              </div>
+            )
+        })} 
         </div>
     </div></>
   )

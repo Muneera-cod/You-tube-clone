@@ -20,11 +20,10 @@ const Navbar=()=> {
   const [profile,setProfile]=useState(false);
   const handleProfile=()=>{
       setProfile(!profile)
-      console.log('sssssd')
   }
-  return (
   
 
+  return (
     <>
     <MantineProvider>
     <nav className='flex-div'>
@@ -49,6 +48,7 @@ const Navbar=()=> {
     
     <Sidebar sidebar={sidebar}/>
     <Profile profile={profile}/>
+  
     </MantineProvider>
     </>
   
